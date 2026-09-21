@@ -1,7 +1,6 @@
-# JobHook — UI Clone (Reference)
+# JobHook 
 
-This project is a static UI clone made to closely match the visual style of:
-https://job-portal-seven-psi.vercel.app/
+
 
 ## What I included
 - `index.html` — single-page UI clone using Poppins & Inter fonts via Google Fonts.
