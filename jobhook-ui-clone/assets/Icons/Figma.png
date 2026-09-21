@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/anchor.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#1A1A2E"/><title>JobHook – Find Your Dream Job | Top Job Portal for Developers & Professionals</title><meta name="description" content="JobHook is a modern job portal connecting top talent with leading companies like Google, Meta, Amazon & more. Search thousands of jobs, post openings, and build your career profile. Apply now!"/><meta name="keywords" content="job portal, find jobs, remote jobs, software engineer jobs, developer jobs, tech jobs, post job, hire talent, career, job search, internship, full-time jobs, part-time jobs, job application, resume builder, employer, applicant, JobHook"/><meta name="author" content="Chandrabhan Maurya"/><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/><link rel="canonical" href="https://jobhook.vercel.app/"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jobhook.vercel.app/"/><meta property="og:title" content="JobHook – Find Your Dream Job | Top Job Portal"/><meta property="og:description" content="Connect with top companies. Search thousands of tech jobs, post openings, and build your professional profile on JobHook."/><meta property="og:image" content="/og-image.png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:site_name" content="JobHook"/><meta property="og:locale" content="en_US"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:url" content="https://jobhook.vercel.app/"/><meta name="twitter:title" content="JobHook – Find Your Dream Job | Top Job Portal"/><meta name="twitter:description" content="Connect with top companies. Search thousands of tech jobs, post openings, and build your professional profile on JobHook."/><meta name="twitter:image" content="/og-image.png"/><meta name="twitter:creator" content="@code_marshal_"/><meta name="application-name" content="JobHook"/><meta name="apple-mobile-web-app-title" content="JobHook"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="mobile-web-app-capable" content="yes"/><meta name="format-detection" content="telephone=no"/><link rel="apple-touch-icon" href="/anchor.png"/><link rel="manifest" href="/manifest.json"/><script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "JobHook",
+      "url": "https://jobhook.vercel.app/",
+      "description": "Modern job portal connecting top talent with leading companies. Search jobs, post openings, and build your career.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://jobhook.vercel.app/find-jobs?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Chandrabhan Maurya",
+        "url": "https://www.linkedin.com/in/chandrabhan-maurya/",
+        "sameAs": [
+          "https://github.com/Code-Mars",
+          "https://www.linkedin.com/in/chandrabhan-maurya/",
+          "https://www.instagram.com/code.marshal_",
+          "https://leetcode.com/u/CodeMars/"
+        ]
+      }
+    }</script><script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JobHook",
+      "url": "https://jobhook.vercel.app/",
+      "logo": "https://jobhook.vercel.app/anchor.png",
+      "description": "A modern job portal for developers and professionals to find their dream jobs.",
+      "sameAs": [
+        "https://github.com/Code-Mars",
+        "https://www.linkedin.com/in/chandrabhan-maurya/",
+        "https://www.instagram.com/code.marshal_"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Chandrabhan Maurya"
+      }
+    }</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><script defer="defer" src="/static/js/main.55cf9272.js"></script><link href="/static/css/main.12a5905e.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app. JobHook is a modern job portal where you can find your dream job, post openings, and connect with top companies.</noscript><div id="root" class="bg-mine-shaft-950"></div></body></html>

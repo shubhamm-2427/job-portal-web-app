@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>JobHook – Find Your Dream Job | Top Job Portal for Developers & Professionals</title>
+  <meta name="description" content="JobHook is a modern job portal connecting top talent with leading companies like Google, Meta, Amazon & more. Search thousands of jobs, post openings, and build your career profile. Apply now!"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="anchor-icon">⚓</span>
+        <span>Job<span class="accent">Hook</span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#jobs" onclick="handleNavAuth(event, 'Find Jobs')">Find Jobs</a>
+        <a href="#talent" onclick="handleNavAuth(event, 'Find Talent')">Find Talent</a>
+        <a href="#post" onclick="handleNavAuth(event, 'Post Job')">Post Job</a>
+        <a href="#posted" onclick="handleNavAuth(event, 'Posted Jobs')">Posted Jobs</a>
+        <a href="#history" onclick="handleNavAuth(event, 'Job History')">Job History</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-outline" id="navAuthBtn" onclick="openAuthModal('login')">Login</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="jobs">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <p class="hero-tag">✦ No. 1 Job Hunt Platform</p>
+          <h1>Find your <span class="accent">dream</span><br>job with us.</h1>
+          <p class="hero-sub">Good life begins with a good company. Start exploring thousands of jobs in one place.</p>
+
+          <div class="search-box">
+            <div class="search-field">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" id="searchJob" placeholder="Job Title / Keywords" />
+            </div>
+            <div class="search-divider"></div>
+            <div class="search-field">
+              <i data-lucide="map-pin" class="search-icon"></i>
+              <input type="text" id="searchLoc" placeholder="Location" />
+            </div>
+            <button class="btn-search" onclick="handleSearch()">Search</button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num">10<span class="accent">K+</span></span>
+              <span class="stat-lbl">Jobs Posted</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+              <span class="stat-num">8<span class="accent">K+</span></span>
+              <span class="stat-lbl">Companies</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+              <span class="stat-num">24<span class="accent">K+</span></span>
+              <span class="stat-lbl">Candidates</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-img-wrap">
+            <div class="hero-blob"></div>
+            <img src="assets/photo.jpeg" alt="Professional" class="hero-photo">
+            <div class="floating-card card-tl">
+              <div class="fc-icon fc-green">✓</div>
+              <div>
+                <div class="fc-title">Profile Completed</div>
+                <div class="fc-sub">Keep it updated</div>
+              </div>
+            </div>
+            <div class="floating-card card-br">
+              <div class="fc-icon fc-yellow">🔔</div>
+              <div>
+                <div class="fc-title">New Job Alert!</div>
+                <div class="fc-sub">3 matches today</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TRUSTED BY ── -->
+    <section class="trusted">
+      <div class="container">
+        <p class="trusted-label">Trusted by <span class="accent">1000+</span> companies worldwide</p>
+        <div class="logo-strip">
+          <div class="logo-track">
+
+            <!-- Google -->
+            <span class="logo-item">
+              <svg width="22" height="22" viewBox="0 0 48 48" class="brand-icon">
+                <path fill="#4285F4" d="M44.5 20H24v8h11.8C34.7 33.9 29.9 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.1-6.1C34.7 4.6 29.6 2 24 2 11.9 2 2 11.9 2 24s9.9 22 22 22c11 0 21-8 21-22 0-1.3-.1-2.7-.5-4z"/>
+                <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16 19.3 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.1-6.1C34.7 4.6 29.6 2 24 2 16 2 9.1 7.4 6.3 14.7z"/>
+                <path fill="#FBBC05" d="M24 46c5.8 0 10.8-1.9 14.6-5.2l-6.7-5.5C29.8 36.9 27 38 24 38c-5.8 0-10.7-3.9-12.5-9.3l-7 5.4C7.8 41.7 15.3 46 24 46z"/>
+                <path fill="#EA4335" d="M44.5 20H24v8h11.8c-.9 2.8-2.7 5.2-5.2 6.8l6.7 5.5C41 37.1 45 31.3 45 24c0-1.3-.1-2.7-.5-4z"/>
+              </svg>
+              <span class="google-text">
+                <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+              </span>
+            </span>
+
+            <!-- Amazon -->
+            <span class="logo-item amazon-logo">
+              <svg width="26" height="26" viewBox="0 0 48 48" class="brand-icon">
+                <path fill="#FF9900" d="M28.5 28.8c-5.1 3.5-12.5 5.4-18.9 5.4-8.9 0-16.9-3.3-23-8.7-.5-.4-.1-1 .5-.7 6.5 3.8 14.6 6.1 22.9 6.1 5.6 0 11.8-1.2 17.5-3.6.8-.4 1.5.5.7 1l-.7.5z"/>
+                <path fill="#FF9900" d="M30.8 26.2c-.6-.8-4.1-.4-5.7-.2-.5.1-.6-.4-.1-.7 2.8-1.9 7.3-1.4 7.9-.7.5.7-.1 5.4-2.7 7.6-.4.3-.8.2-.6-.3.6-1.4 1.8-4.5 1.2-5.7z"/>
+                <path fill="#232F3E" d="M24 8c6.3 0 11.4 5.1 11.4 11.4 0 4.1-2.2 7.7-5.4 9.7l-1-.5c2.7-1.8 4.5-4.8 4.5-8.2 0-5.5-4.5-9.9-9.9-9.9S13.7 15 13.7 20.4c0 3.4 1.8 6.4 4.5 8.2l-1 .5C14.1 27.1 12 23.5 12 19.4 12 13.1 17.3 8 24 8z"/>
+              </svg>
+              <strong style="color:#fff;font-size:20px;letter-spacing:-1px">amazon</strong>
+              <svg width="30" height="8" viewBox="0 0 60 12" style="margin-left:-4px;margin-top:2px">
+                <path d="M2 8 Q30 12 58 4" stroke="#FF9900" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <polygon points="54,1 60,6 52,8" fill="#FF9900"/>
+              </svg>
+            </span>
+
+            <!-- Microsoft -->
+            <span class="logo-item">
+              <svg width="20" height="20" viewBox="0 0 48 48" class="brand-icon">
+                <path fill="#F25022" d="M2 2h21v21H2z"/>
+                <path fill="#7FBA00" d="M25 2h21v21H25z"/>
+                <path fill="#00A4EF" d="M2 25h21v21H2z"/>
+                <path fill="#FFB900" d="M25 25h21v21H25z"/>
+              </svg>
+              <strong style="color:#fff">Microsoft</strong>
+            </span>
+
+            <!-- Spotify -->
+            <span class="logo-item">
+              <svg width="22" height="22" viewBox="0 0 48 48" class="brand-icon">
+                <circle cx="24" cy="24" r="24" fill="#1DB954"/>
+                <path d="M34.5 33.2c-.4.6-1.1.8-1.7.4-4.7-2.9-10.5-3.5-17.4-1.9-.6.1-1.3-.3-1.4-.9-.1-.6.3-1.3.9-1.4 7.5-1.7 14-1.1 19.2 2.2.7.4.8 1.1.4 1.6zm2.3-5.1c-.5.7-1.4.9-2.1.5-5.3-3.3-13.4-4.2-19.7-2.3-.8.2-1.6-.2-1.8-1-.2-.8.2-1.6 1-1.8 7.2-2.1 16.1-1.1 22.2 2.6.7.4.9 1.3.4 2zm.2-5.4C30.5 19 20 18.6 13.8 20.5c-.9.3-1.9-.2-2.2-1.1-.3-.9.2-1.9 1.1-2.2 7.1-2.1 18.9-1.7 26.3 2.7 1 .6 1.3 1.8.8 2.7-.6 1-1.8 1.3-2.8.8-.2-.1-.3-.2-.5-.2z" fill="#fff"/>
+              </svg>
+              <strong style="color:#1DB954">Spotify</strong>
+            </span>
+
+            <!-- Netflix -->
+            <span class="logo-item">
+              <strong style="color:#E50914;font-size:22px;letter-spacing:2px;font-style:italic">NETFLIX</strong>
+            </span>
+
+            <!-- Meta -->
+            <span class="logo-item">
+              <svg width="26" height="14" viewBox="0 0 60 32" class="brand-icon">
+                <defs>
+                  <linearGradient id="mg" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#0082FB"/>
+                    <stop offset="100%" style="stop-color:#00B2FF"/>
+                  </linearGradient>
+                </defs>
+                <path d="M5 25c0-4 1.5-8 4-11 1.5-1.8 3.5-3 5.5-3 2 0 3.5 1 5 3 1.5 2 2.5 4.5 2.5 7 0 3-1 5-2.5 5S17 24 15.5 21C14 18 13 15 13 14c0-1.5.5-2.5 1.5-2.5.8 0 1.5 1 2.5 3l3 7c1 2.5 2 4 3.5 4 2 0 3.5-2.5 3.5-7 0-5-2-9-5-11-1.2-.9-2.5-1.5-4-1.5-4 0-7.5 2.5-9.5 7C7.5 15.5 7 18 7 21c0 4.5 2 8 5.5 9.5" fill="none" stroke="url(#mg)" stroke-width="4" stroke-linecap="round"/>
+                <path d="M25 14c0-1.5.5-2.5 1.5-2.5 1 0 2 1.5 3.5 4.5L34 23c1 2 2 3 3 3 1.5 0 2.5-1.5 2.5-4.5 0-6-3-11-8-13" fill="none" stroke="url(#mg)" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+              <strong style="color:#0082FB">Meta</strong>
+            </span>
+
+            <!-- Oracle -->
+            <span class="logo-item">
+              <strong style="color:#C74634;font-size:19px;font-weight:800">ORACLE</strong>
+            </span>
+
+            <!-- Figma -->
+            <span class="logo-item">
+              <svg width="16" height="22" viewBox="0 0 32 48" class="brand-icon">
+                <rect x="0" y="0" width="16" height="16" rx="8" fill="#F24E1E"/>
+                <rect x="16" y="0" width="16" height="16" rx="8" fill="#FF7262"/>
+                <rect x="0" y="16" width="16" height="16" rx="8" fill="#A259FF"/>
+                <rect x="0" y="32" width="16" height="16" rx="8" fill="#0ACF83"/>
+                <circle cx="24" cy="24" r="8" fill="#1ABCFE"/>
+              </svg>
+              <strong style="color:#fff">Figma</strong>
+            </span>
+
+            <!-- ── DUPLICATE SET for infinite loop ── -->
+
+            <span class="logo-item">
+              <svg width="22" height="22" viewBox="0 0 48 48" class="brand-icon">
+                <path fill="#4285F4" d="M44.5 20H24v8h11.8C34.7 33.9 29.9 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.1-6.1C34.7 4.6 29.6 2 24 2 11.9 2 2 11.9 2 24s9.9 22 22 22c11 0 21-8 21-22 0-1.3-.1-2.7-.5-4z"/>
+                <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16 19.3 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.1-6.1C34.7 4.6 29.6 2 24 2 16 2 9.1 7.4 6.3 14.7z"/>
+                <path fill="#FBBC05" d="M24 46c5.8 0 10.8-1.9 14.6-5.2l-6.7-5.5C29.8 36.9 27 38 24 38c-5.8 0-10.7-3.9-12.5-9.3l-7 5.4C7.8 41.7 15.3 46 24 46z"/>
+                <path fill="#EA4335" d="M44.5 20H24v8h11.8c-.9 2.8-2.7 5.2-5.2 6.8l6.7 5.5C41 37.1 45 31.3 45 24c0-1.3-.1-2.7-.5-4z"/>
+              </svg>
+              <span class="google-text">
+                <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+              </span>
+            </span>
+
+            <span class="logo-item amazon-logo">
+              <svg width="26" height="26" viewBox="0 0 48 48" class="brand-icon">
+                <path fill="#FF9900" d="M28.5 28.8c-5.1 3.5-12.5 5.4-18.9 5.4-8.9 0-16.9-3.3-23-8.7-.5-.4-.1-1 .5-.7 6.5 3.8 14.6 6.1 22.9 6.1 5.6 0 11.8-1.2 17.5-3.6.8-.4 1.5.5.7 1l-.7.5z"/>
+                <path fill="#FF9900" d="M30.8 26.2c-.6-.8-4.1-.4-5.7-.2-.5.1-.6-.4-.1-.7 2.8-1.9 7.3-1.4 7.9-.7.5.7-.1 5.4-2.7 7.6-.4.3-.8.2-.6-.3.6-1.4 1.8-4.5 1.2-5.7z"/>
+              </svg>
+              <strong style="color:#fff;font-size:20px;letter-spacing:-1px">amazon</strong>
+              <svg width="30" height="8" viewBox="0 0 60 12" style="margin-left:-4px;margin-top:2px">
+                <path d="M2 8 Q30 12 58 4" stroke="#FF9900" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <polygon points="54,1 60,6 52,8" fill="#FF9900"/>
+              </svg>
+            </span>
+
+            <span class="logo-item">
+              <svg width="20" height="20" viewBox="0 0 48 48" class="brand-icon">
+                <path fill="#F25022" d="M2 2h21v21H2z"/>
+                <path fill="#7FBA00" d="M25 2h21v21H25z"/>
+                <path fill="#00A4EF" d="M2 25h21v21H2z"/>
+                <path fill="#FFB900" d="M25 25h21v21H25z"/>
+              </svg>
+              <strong style="color:#fff">Microsoft</strong>
+            </span>
+
+            <span class="logo-item">
+              <svg width="22" height="22" viewBox="0 0 48 48" class="brand-icon">
+                <circle cx="24" cy="24" r="24" fill="#1DB954"/>
+                <path d="M34.5 33.2c-.4.6-1.1.8-1.7.4-4.7-2.9-10.5-3.5-17.4-1.9-.6.1-1.3-.3-1.4-.9-.1-.6.3-1.3.9-1.4 7.5-1.7 14-1.1 19.2 2.2.7.4.8 1.1.4 1.6zm2.3-5.1c-.5.7-1.4.9-2.1.5-5.3-3.3-13.4-4.2-19.7-2.3-.8.2-1.6-.2-1.8-1-.2-.8.2-1.6 1-1.8 7.2-2.1 16.1-1.1 22.2 2.6.7.4.9 1.3.4 2zm.2-5.4C30.5 19 20 18.6 13.8 20.5c-.9.3-1.9-.2-2.2-1.1-.3-.9.2-1.9 1.1-2.2 7.1-2.1 18.9-1.7 26.3 2.7 1 .6 1.3 1.8.8 2.7-.6 1-1.8 1.3-2.8.8-.2-.1-.3-.2-.5-.2z" fill="#fff"/>
+              </svg>
+              <strong style="color:#1DB954">Spotify</strong>
+            </span>
+
+            <span class="logo-item">
+              <strong style="color:#E50914;font-size:22px;letter-spacing:2px;font-style:italic">NETFLIX</strong>
+            </span>
+
+            <span class="logo-item">
+              <svg width="26" height="14" viewBox="0 0 60 32" class="brand-icon">
+                <defs>
+                  <linearGradient id="mg2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#0082FB"/>
+                    <stop offset="100%" style="stop-color:#00B2FF"/>
+                  </linearGradient>
+                </defs>
+                <path d="M5 25c0-4 1.5-8 4-11 1.5-1.8 3.5-3 5.5-3 2 0 3.5 1 5 3 1.5 2 2.5 4.5 2.5 7 0 3-1 5-2.5 5S17 24 15.5 21C14 18 13 15 13 14c0-1.5.5-2.5 1.5-2.5.8 0 1.5 1 2.5 3l3 7c1 2.5 2 4 3.5 4 2 0 3.5-2.5 3.5-7 0-5-2-9-5-11-1.2-.9-2.5-1.5-4-1.5-4 0-7.5 2.5-9.5 7C7.5 15.5 7 18 7 21c0 4.5 2 8 5.5 9.5" fill="none" stroke="url(#mg2)" stroke-width="4" stroke-linecap="round"/>
+                <path d="M25 14c0-1.5.5-2.5 1.5-2.5 1 0 2 1.5 3.5 4.5L34 23c1 2 2 3 3 3 1.5 0 2.5-1.5 2.5-4.5 0-6-3-11-8-13" fill="none" stroke="url(#mg2)" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+              <strong style="color:#0082FB">Meta</strong>
+            </span>
+
+            <span class="logo-item">
+              <strong style="color:#C74634;font-size:19px;font-weight:800">ORACLE</strong>
+            </span>
+
+            <span class="logo-item">
+              <svg width="16" height="22" viewBox="0 0 32 48" class="brand-icon">
+                <rect x="0" y="0" width="16" height="16" rx="8" fill="#F24E1E"/>
+                <rect x="16" y="0" width="16" height="16" rx="8" fill="#FF7262"/>
+                <rect x="0" y="16" width="16" height="16" rx="8" fill="#A259FF"/>
+                <rect x="0" y="32" width="16" height="16" rx="8" fill="#0ACF83"/>
+                <circle cx="24" cy="24" r="8" fill="#1ABCFE"/>
+              </svg>
+              <strong style="color:#fff">Figma</strong>
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURED JOBS ── -->
+    <section class="featured-jobs" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Featured <span class="accent">Jobs</span></h2>
+            <p class="section-sub">Explore our handpicked top opportunities from leading global tech companies.</p>
+          </div>
+          <div class="job-filter-tabs">
+            <button class="filter-tab active" onclick="filterJobTab('All', this)">All Jobs</button>
+            <button class="filter-tab" onclick="filterJobTab('Engineering', this)">Engineering</button>
+            <button class="filter-tab" onclick="filterJobTab('Design', this)">Design</button>
+            <button class="filter-tab" onclick="filterJobTab('Remote', this)">Remote</button>
+          </div>
+        </div>
+        <div class="jobs-grid" id="jobsGrid">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── JOB CATEGORIES ── -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <div class="cat-header-centered">
+          <h2>Browse <span class="accent">Job </span>Category</h2>
+          <p class="section-sub">Explore diverse job opportunities tailored to your skills. Start your career journey today!</p>
+        </div>
+
+        <div class="carousel-container">
+          <button class="carousel-nav-btn prev" id="catPrev" aria-label="Previous Slide">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <div class="cat-carousel" id="catCarousel">
+            <!-- 1. Digital Marketing -->
+            <div class="cat-card" onclick="filterCategory('Marketing')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Digital Marketing.png" alt="Digital Marketing" />
+              </div>
+              <h3 class="cat-title">Digital Marketing</h3>
+              <p class="cat-desc">Promote brands online with marketing strategies</p>
+              <div class="cat-jobs">1k+ new job posted</div>
+            </div>
+
+            <!-- 2. Web Developer -->
+            <div class="cat-card active-cat" onclick="filterCategory('Engineering')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Web Developer.png" alt="Web Developer" />
+              </div>
+              <h3 class="cat-title">Web Developer</h3>
+              <p class="cat-desc">Build and maintain websites for clients</p>
+              <div class="cat-jobs">2k+ new job posted</div>
+            </div>
+
+            <!-- 3. Arts & Design -->
+            <div class="cat-card" onclick="filterCategory('Design')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Arts & Design.png" alt="Arts & Design" />
+              </div>
+              <h3 class="cat-title">Arts & Design</h3>
+              <p class="cat-desc">Create visual content for branding and media</p>
+              <div class="cat-jobs">500+ new job posted</div>
+            </div>
+
+            <!-- 4. UI-UX Designer -->
+            <div class="cat-card" onclick="filterCategory('Design')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/UI-UX Designer.png" alt="UI-UX Designer" />
+              </div>
+              <h3 class="cat-title">UI-UX Designer</h3>
+              <p class="cat-desc">Design user interfaces and enhance user experience</p>
+              <div class="cat-jobs">800+ new job posted</div>
+            </div>
+
+            <!-- 5. Content Writing -->
+            <div class="cat-card" onclick="filterCategory('Marketing')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Content Writing.png" alt="Content Writing" />
+              </div>
+              <h3 class="cat-title">Content Writing</h3>
+              <p class="cat-desc">Write and edit content for various platforms</p>
+              <div class="cat-jobs">1.5k+ new job posted</div>
+            </div>
+
+            <!-- 6. Data Entry -->
+            <div class="cat-card" onclick="filterCategory('Data')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Data Entry.png" alt="Data Entry" />
+              </div>
+              <h3 class="cat-title">Data Entry</h3>
+              <p class="cat-desc">Input data into systems accurately and efficiently</p>
+              <div class="cat-jobs">1k+ new job posted</div>
+            </div>
+
+            <!-- 7. Customer Support -->
+            <div class="cat-card" onclick="filterCategory('HR')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Customer Support.png" alt="Customer Support" />
+              </div>
+              <h3 class="cat-title">Customer Support</h3>
+              <p class="cat-desc">Assist customers with inquiries and issues</p>
+              <div class="cat-jobs">1.2k+ new job posted</div>
+            </div>
+
+            <!-- 8. Sales -->
+            <div class="cat-card" onclick="filterCategory('Marketing')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Sales.png" alt="Sales" />
+              </div>
+              <h3 class="cat-title">Sales</h3>
+              <p class="cat-desc">Sell products and services to customers</p>
+              <div class="cat-jobs">900+ new job posted</div>
+            </div>
+
+            <!-- 9. Finance -->
+            <div class="cat-card" onclick="filterCategory('Finance')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Finance.png" alt="Finance" />
+              </div>
+              <h3 class="cat-title">Finance</h3>
+              <p class="cat-desc">Manage financial records and transactions</p>
+              <div class="cat-jobs">700+ new job posted</div>
+            </div>
+
+            <!-- 10. Human Resource -->
+            <div class="cat-card" onclick="filterCategory('HR')">
+              <div class="cat-icon-bubble">
+                <img src="assets/Category/Human Resource.png" alt="Human Resource" />
+              </div>
+              <h3 class="cat-title">Human Resource</h3>
+              <p class="cat-desc">Recruit, manage, and support company employees</p>
+              <div class="cat-jobs">600+ new job posted</div>
+            </div>
+          </div>
+
+          <button class="carousel-nav-btn next" id="catNext" aria-label="Next Slide">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <section class="how-it-works" id="how">
+      <div class="container">
+        <div class="how-inner">
+          <div class="how-left">
+            <div class="how-img-wrap">
+              <img src="assets/Girl.png" alt="Person searching for jobs" class="how-img">
+            </div>
+          </div>
+          <div class="how-right">
+            <h2>How it <span class="accent">Works?</span></h2>
+            <p class="section-sub">Effortlessly navigate through the process and land your dream job.</p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                  <h4>Create an Account</h4>
+                  <p>Sign up in seconds. Set up your professional profile with your skills, experience, and preferences.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                  <h4>Build Your Resume</h4>
+                  <p>Create a standout resume using our builder. Highlight your best work and skills.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                  <h4>Apply for Jobs</h4>
+                  <p>Find and apply for jobs that match your skills and interests with one click.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                  <h4>Get Hired!</h4>
+                  <p>Connect with top employers and start your exciting new career journey.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2>What <span class="accent">Users</span> Say About Us?</h2>
+        <p class="section-sub">Real stories from real people who found their dream jobs.</p>
+        <div class="test-grid">
+          <div class="test-card">
+            <div class="test-stars">★★★★★</div>
+            <p>"This job portal made job search easy and quick. Found 3 interviews in the first week. Recommended to all job seekers!"</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background:linear-gradient(135deg,#ffbd20,#ff922b)">NR</div>
+              <div>
+                <strong>Nishant Ranjan</strong>
+                <span>Software Engineer @ Google</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card featured-test">
+            <div class="test-stars">★★★★★</div>
+            <p>"Found my dream job within a week! The application process was incredibly smooth and the company matches were perfect."</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background:linear-gradient(135deg,#38d9a9,#12b886)">SH</div>
+              <div>
+                <strong>Shivansh Hazare</strong>
+                <span>Full Stack Dev @ Microsoft</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="test-stars">★★★★☆</div>
+            <p>"I secured a job offer within days of applying. Exceptional user experience, great support team and amazing job matches!"</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background:linear-gradient(135deg,#be4bdb,#7950f2)">SK</div>
+              <div>
+                <strong>Shradhaa Kapoor</strong>
+                <span>UI/UX Designer @ Figma</span>
+              </div>
+            </div>
+          </div>
+          <div class="test-card">
+            <div class="test-stars">★★★★☆</div>
+            <p>"Highly efficient job portal with excellent resources. Helped me land a great position at my dream company!"</p>
+            <div class="test-author">
+              <div class="test-avatar" style="background:linear-gradient(135deg,#ff6b6b,#f03e3e)">SB</div>
+              <div>
+                <strong>Sonam Bajwa</strong>
+                <span>Data Analyst @ Netflix</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SUBSCRIBE ── -->
+    <section class="subscribe">
+      <div class="container">
+        <div class="subscribe-box">
+          <div class="subscribe-left">
+            <h3>Never Miss Any <span class="accent">Job News?</span></h3>
+            <p>Subscribe to our newsletter and get the latest job alerts delivered to your inbox.</p>
+          </div>
+          <div class="subscribe-form">
+            <input type="email" id="emailInput" placeholder="Enter your email address" />
+            <button class="btn-primary" onclick="handleSubscribe()">Subscribe Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand">⚓ Job<span class="accent">Hook</span></div>
+        <p>Job portal with user profiles, skill updates, certifications, work experience and admin job postings.</p>
+        <div class="social-links">
+          <a href="#" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.763l7.726-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#">Find Job</a>
+          <a href="#">Find Company</a>
+          <a href="#">Find Employee</a>
+          <a href="#">Post Job</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help &amp; Support</a>
+          <a href="#">Feedback</a>
+          <a href="#">FAQs</a>
+          <a href="#">Community</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2026 JobHook. All rights reserved.</span>
+        <span>Designed And Developed by Shubham Raj❤️</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── AUTH POPUP MODAL (LOGIN & SIGNUP) ── -->
+  <div class="auth-modal-overlay" id="authModalOverlay" onclick="closeAuthModalOnOutsideClick(event)">
+    <div class="auth-modal-box">
+      <!-- Close button -->
+      <button class="auth-modal-close" onclick="closeAuthModal()" aria-label="Close Modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- Modal Brand & Tabs -->
+      <div class="auth-modal-header">
+        <div class="auth-brand">⚓ Job<span class="accent">Hook</span></div>
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLoginBtn" onclick="switchAuthTab('login')">Login</button>
+          <button class="auth-tab" id="tabSignupBtn" onclick="switchAuthTab('signup')">Sign Up</button>
+        </div>
+      </div>
+
+      <!-- ── LOGIN FORM ── -->
+      <form class="auth-form" id="loginForm" onsubmit="handleLoginSubmit(event)">
+        <div class="auth-form-title">
+          <h3>Welcome Back!</h3>
+          <p>Login to your JobHook account to explore thousands of jobs</p>
+        </div>
+
+        <div class="auth-input-group">
+          <label for="loginEmail">Email Address <span class="required">*</span></label>
+          <div class="input-icon-wrap">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <input type="email" id="loginEmail" placeholder="yourname@domain.com" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="auth-input-group">
+          <div class="label-row">
+            <label for="loginPassword">Password <span class="required">*</span></label>
+            <a href="javascript:void(0)" onclick="handleForgotPassword()" class="forgot-link">Forgot password?</a>
+          </div>
+          <div class="input-icon-wrap">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password" />
+            <button type="button" class="btn-toggle-pwd" onclick="togglePasswordVisibility('loginPassword', this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-checkbox-row">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="rememberMe" checked />
+            <span class="checkmark"></span>
+            Remember me
+          </label>
+        </div>
+
+        <button type="submit" class="btn-auth-submit" id="loginSubmitBtn">
+          <span>Login to Account</span>
+        </button>
+
+        <div class="auth-switch-text">
+          Don't have an account? 
+          <a href="javascript:void(0)" onclick="switchAuthTab('signup')" class="accent-link">Sign Up</a>
+        </div>
+      </form>
+
+      <!-- ── SIGNUP FORM ── -->
+      <form class="auth-form" id="signupForm" style="display:none" onsubmit="handleSignupSubmit(event)">
+        <div class="auth-form-title">
+          <h3>Create an Account</h3>
+          <p>Start your career journey with JobHook today</p>
+        </div>
+
+        <div class="auth-input-group">
+          <label for="signupName">Full Name <span class="required">*</span></label>
+          <div class="input-icon-wrap">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+            <input type="text" id="signupName" placeholder="e.g. Rahul Sharma" required autocomplete="name" />
+          </div>
+        </div>
+
+        <div class="auth-input-group">
+          <label for="signupEmail">Email Address <span class="required">*</span></label>
+          <div class="input-icon-wrap">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <input type="email" id="signupEmail" placeholder="yourname@domain.com" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="auth-input-row">
+          <div class="auth-input-group">
+            <label for="signupPassword">Password <span class="required">*</span></label>
+            <div class="input-icon-wrap">
+              <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input type="password" id="signupPassword" placeholder="Min. 6 chars" required autocomplete="new-password" />
+            </div>
+          </div>
+          <div class="auth-input-group">
+            <label for="signupConfirmPassword">Confirm Password <span class="required">*</span></label>
+            <div class="input-icon-wrap">
+              <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input type="password" id="signupConfirmPassword" placeholder="Repeat password" required autocomplete="new-password" />
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-input-group">
+          <label>You are joining as <span class="required">*</span></label>
+          <div class="account-type-grid">
+            <label class="account-type-option selected" id="accTypeApplicant" onclick="selectAccountType('APPLICANT')">
+              <input type="radio" name="accountType" value="APPLICANT" checked />
+              <div class="acc-type-content">
+                <span class="acc-icon">👨‍💻</span>
+                <div>
+                  <strong>Job Seeker</strong>
+                  <small>Looking for dream jobs</small>
+                </div>
+              </div>
+            </label>
+            <label class="account-type-option" id="accTypeEmployer" onclick="selectAccountType('EMPLOYER')">
+              <input type="radio" name="accountType" value="EMPLOYER" />
+              <div class="acc-type-content">
+                <span class="acc-icon">🏢</span>
+                <div>
+                  <strong>Employer</strong>
+                  <small>Hiring top talent</small>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-auth-submit" id="signupSubmitBtn">
+          <span>Create Account</span>
+        </button>
+
+        <div class="auth-switch-text">
+          Already have an account? 
+          <a href="javascript:void(0)" onclick="switchAuthTab('login')" class="accent-link">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
